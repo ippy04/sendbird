@@ -130,7 +130,7 @@ func (s *AdminServiceOp) DeleteMessage(messageId string) (*DeleteMessage, *Respo
 
 	params := struct {
 		RequestDefaults
-		MsgId string `json:msg_id`
+		MsgId string `json:"msg_id"`
 	}{
 		MsgId: messageId,
 	}
@@ -154,7 +154,7 @@ func (s *AdminServiceOp) ListMessagingChannels(userId string) ([]AdminMessagingC
 
 	params := struct {
 		RequestDefaults
-		Id string `json:id`
+		Id string `json:"id"`
 	}{
 		Id: userId,
 	}
@@ -178,7 +178,7 @@ func (s *AdminServiceOp) MuteAllChannels(userId string) (*Response, error) {
 
 	params := struct {
 		RequestDefaults
-		Id string `json:id`
+		Id string `json:"id"`
 	}{
 		Id: userId,
 	}
@@ -219,7 +219,7 @@ func (s *AdminServiceOp) UnMuteAllChannels(userId string) (*Response, error) {
 
 	params := struct {
 		RequestDefaults
-		Id string `json:id`
+		Id string `json:"id"`
 	}{
 		Id: userId,
 	}
@@ -260,7 +260,7 @@ func (s *AdminServiceOp) MuteList(channelUrls []string) ([]string, *Response, er
 
 	params := struct {
 		RequestDefaults
-		ChannelUrls []string `json:channel_urls`
+		ChannelUrls []string `json:"channel_urls"`
 	}{
 		ChannelUrls: channelUrls,
 	}

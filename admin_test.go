@@ -150,7 +150,7 @@ func TestAdminDeleteMessage(t *testing.T) {
 
 		body := struct {
 			RequestDefaults
-			MsgId string `json:msg_id`
+			MsgId string `json:"msg_id"`
 		}{}
 
 		decoder := json.NewDecoder(r.Body)
@@ -201,7 +201,7 @@ func TestAdminListMessagingChannels(t *testing.T) {
 
 		body := struct {
 			RequestDefaults
-			Id string `json:id`
+			Id string `json:"id"`
 		}{}
 
 		decoder := json.NewDecoder(r.Body)
@@ -284,7 +284,7 @@ func TestAdminMuteAllChannels(t *testing.T) {
 
 		body := struct {
 			RequestDefaults
-			Id string `json:id`
+			Id string `json:"id"`
 		}{}
 
 		decoder := json.NewDecoder(r.Body)
@@ -366,7 +366,7 @@ func TestAdminUnMuteAllChannels(t *testing.T) {
 
 		body := struct {
 			RequestDefaults
-			Id string `json:id`
+			Id string `json:"id"`
 		}{}
 
 		decoder := json.NewDecoder(r.Body)
@@ -447,7 +447,7 @@ func TestAdminMuteList(t *testing.T) {
 
 		body := struct {
 			RequestDefaults
-			ChannelUrls []string `json:channel_urls`
+			ChannelUrls []string `json:"channel_urls"`
 		}{}
 		decoder := json.NewDecoder(r.Body)
 		err := decoder.Decode(&body)
