@@ -8,7 +8,7 @@
 You can view the Sendbird Server API docs here: [https://sendbird.gitbooks.io/sendbird-server-api/content/en/](https://sendbird.gitbooks.io/sendbird-server-api/content/en/)
 
 ### Usage
-1. Create a Sendbird Application at [https://dashboard.sendbird.com/](https://dashboard.sendbird.com/)
+1. Create a Sendbird Application at [https://dashboard.sendbird.com/](https://dashboard.sendbird.com/) to get an APP_ID and an API_TOKEN
 2. Run `go get github.com/ippy04/sendbird`
 
 ```go
