@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/ippy04/sendbird.svg?branch=master)](https://travis-ci.org/ippy04/sendbird)
 [![Coverage Status](https://coveralls.io/repos/github/ippy04/sendbird/badge.svg?branch=master)](https://coveralls.io/github/ippy04/sendbird?branch=master)
 [![Go Report Card](https://goreportcard.com/badge/github.com/ippy04/sendbird)](https://goreportcard.com/report/github.com/ippy04/sendbird)
+[![GoDoc](https://godoc.org/github.com/ippy04/sendbird?status.svg)](https://godoc.org/github.com/ippy04/sendbird)
 
 You can view the Sendbird Server API docs here: [https://sendbird.gitbooks.io/sendbird-server-api/content/en/](https://sendbird.gitbooks.io/sendbird-server-api/content/en/)
 
@@ -17,6 +18,8 @@ import "github.com/ippy04/sendbird"
 sb := sendbird.NewClient(SENDBIRD_APP_ID, SENDBIRD_API_TOKEN, nil)
 
 ```
+
+
 
 ### Examples
 To create a new user:
