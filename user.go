@@ -1,7 +1,5 @@
 package sendbird
 
-import ()
-
 type UserRequest struct {
 	RequestDefaults
 	Id               string `json:"id,omitempty"`

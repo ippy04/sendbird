@@ -1,7 +1,5 @@
 package sendbird
 
-import ()
-
 // AdminService is an interface for interfacing with the Admin
 // endpoints of the Sendbird API
 type AdminService interface {

@@ -153,14 +153,14 @@ func TestBotList(t *testing.T) {
 	})
 
 	expected := []Bot{
-		Bot{
+		{
 			BotToken:       "<BOT_TOKEN1>",
 			BotUserId:      "helper_bot",
 			BotNickname:    "Helper Bot",
 			BotCallbackUrl: "https://yourdomain.com/sendbird_bot",
 			IsPrivacyMode:  true,
 		},
-		Bot{
+		{
 			BotToken:       "<BOT_TOKEN2>",
 			BotUserId:      "helper_bot2",
 			BotNickname:    "Helper Bot2",

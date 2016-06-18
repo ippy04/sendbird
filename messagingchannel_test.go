@@ -385,12 +385,12 @@ func TestMessagingChannelView(t *testing.T) {
 		LastMessageTS: 1234567890,
 		CreatedAt:     12421521552,
 		Members: []Member{
-			Member{
+			{
 				Id:    "123",
 				Image: "http://sendbird/user123.jpg",
 				Name:  "bugs",
 			},
-			Member{
+			{
 				Id:    "456",
 				Image: "http://sendbird/user456.jpg",
 				Name:  "elmer",

@@ -105,7 +105,7 @@ func TestAdminReadMessages(t *testing.T) {
 	})
 
 	expected := []AdminMessage{
-		AdminMessage{
+		{
 			Id:        "123",
 			Nickname:  "bugs",
 			MessageId: 21315135632,
@@ -113,7 +113,7 @@ func TestAdminReadMessages(t *testing.T) {
 			Message:   "hola mundial",
 			File:      AdminMessageFile{},
 		},
-		AdminMessage{
+		{
 			Id:        "456",
 			Nickname:  "elmer",
 			MessageId: 32151461234,
@@ -248,18 +248,18 @@ func TestAdminListMessagingChannels(t *testing.T) {
 	}
 
 	expected := []AdminMessagingChannel{
-		AdminMessagingChannel{
+		{
 			ChannelUrl:         "chat_channel_url",
 			UnreadMessageCount: 54,
 			LastMessage:        "Remember me",
 			LastMessageTS:      4524624642362,
 			Members: []Member{
-				Member{
+				{
 					Id:    "123",
 					Image: "http://sendbird.com/123.jpg",
 					Name:  "bugs",
 				},
-				Member{
+				{
 					Id:    "456",
 					Image: "http://sendbird.com/456.jpg",
 					Name:  "elmer",

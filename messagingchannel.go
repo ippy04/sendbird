@@ -1,7 +1,5 @@
 package sendbird
 
-import ()
-
 type MessagingChannelRequest struct {
 	RequestDefaults
 	Name     string `json:"name,omitempty"`      // (Optional) Topic

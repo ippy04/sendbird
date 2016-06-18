@@ -115,7 +115,7 @@ func TestChatChannelList(t *testing.T) {
 	})
 
 	expected := []ChatChannel{
-		ChatChannel{
+		{
 			Id:            123456,
 			Name:          "new chat channel",
 			ChannelUrl:    "chat_channel_url",
@@ -125,7 +125,7 @@ func TestChatChannelList(t *testing.T) {
 			Data:          "extra data",
 			CreatedAt:     1234567890123,
 		},
-		ChatChannel{
+		{
 			Id:            789,
 			Name:          "new chat channel 2",
 			ChannelUrl:    "chat_channel_url_2",
@@ -309,7 +309,7 @@ func TestChatChannelView(t *testing.T) {
 			CreatedAt:     12421521552,
 		},
 		Members: []Member{
-			Member{
+			{
 				Id:    "1",
 				Image: "http://sendbird.com/user_profile1.jpg",
 				Name:  "Bugs",

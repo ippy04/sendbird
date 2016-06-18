@@ -1,7 +1,5 @@
 package sendbird
 
-import ()
-
 type ChatChannelRequest struct {
 	RequestDefaults
 	ChannelUrl string `json:"channel_url,omitempty"` // Channel Url
@@ -101,7 +99,7 @@ var _ ChatChannelService = &ChatChannelServiceOp{}
 
 func mapCoverImageUrlToCoverUrl(chatChannels []ChatChannel) {
 
-	for i, _ := range chatChannels {
+	for i := range chatChannels {
 		chatChannels[i].CoverUrl = chatChannels[i].CoverImageUrl
 	}
 
