@@ -49,7 +49,7 @@ var _ UserService = &UserServiceOp{}
 func (s *UserServiceOp) Create(params *UserRequest) (*User, *Response, error) {
 
 	path := "/user/create"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	createdUser := new(User)
@@ -68,7 +68,7 @@ func (s *UserServiceOp) Create(params *UserRequest) (*User, *Response, error) {
 func (s *UserServiceOp) Update(params *UserRequest) (*User, *Response, error) {
 
 	path := "/user/update"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	updatedUser := new(User)
@@ -85,7 +85,7 @@ func (s *UserServiceOp) Update(params *UserRequest) (*User, *Response, error) {
 func (s *UserServiceOp) Auth(params *UserRequest) (*User, *Response, error) {
 
 	path := "/user/auth"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	user := new(User)
@@ -102,7 +102,7 @@ func (s *UserServiceOp) Auth(params *UserRequest) (*User, *Response, error) {
 func (s *UserServiceOp) Block(params *BlockRequest) (*Response, error) {
 
 	path := "/user/block"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	var i interface{}
@@ -119,7 +119,7 @@ func (s *UserServiceOp) Block(params *BlockRequest) (*Response, error) {
 func (s *UserServiceOp) UnBlock(params *BlockRequest) (*Response, error) {
 
 	path := "/user/unblock"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	var i interface{}
@@ -136,7 +136,7 @@ func (s *UserServiceOp) UnBlock(params *BlockRequest) (*Response, error) {
 func (s *UserServiceOp) Deactivate(params *DeactivateRequest) (*Response, error) {
 
 	path := "/user/deactivate"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	var i interface{}

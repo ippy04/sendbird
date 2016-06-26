@@ -108,7 +108,7 @@ var _ MessagingChannelService = &MessagingChannelServiceOp{}
 func (s *MessagingChannelServiceOp) Create(params *MessagingChannelRequest) (*MessagingChannel, *Response, error) {
 
 	path := "/messaging/create"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	messagingChannel := new(MessagingChannelResponse)
@@ -125,7 +125,7 @@ func (s *MessagingChannelServiceOp) Create(params *MessagingChannelRequest) (*Me
 func (s *MessagingChannelServiceOp) Update(params *MessagingChannelUpdateRequest) (*MessagingChannel, *Response, error) {
 
 	path := "/messaging/update"
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	messagingChannel := new(MessagingChannelResponse)
@@ -144,7 +144,7 @@ func (s *MessagingChannelServiceOp) Delete(channelUrl string) (*MessagingChannel
 	path := "/messaging/delete"
 
 	params := MessagingChannelUpdateRequest{ChannelUrl: channelUrl}
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	deleted := new(MessagingChannelUrl)
@@ -162,7 +162,7 @@ func (s *MessagingChannelServiceOp) Invite(params *MessagingChannelInviteRequest
 
 	path := "/messaging/invite"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	messagingChannelUrl := new(MessagingChannelUrl)
@@ -180,7 +180,7 @@ func (s *MessagingChannelServiceOp) Hide(params *MessagingChannelHideRequest) (*
 
 	path := "/messaging/hide"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	messagingChannelUrl := new(MessagingChannelUrl)
@@ -198,7 +198,7 @@ func (s *MessagingChannelServiceOp) Leave(params *MessagingChannelLeaveRequest) 
 
 	path := "/messaging/leave"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	messagingChannelUrl := new(MessagingChannelUrl)
@@ -218,7 +218,7 @@ func (s *MessagingChannelServiceOp) View(channelUrl string) (*MessagingChannelVi
 	path := "/messaging/view"
 
 	params := MessagingChannelUpdateRequest{ChannelUrl: channelUrl}
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	view := new(MessagingChannelView)
@@ -236,7 +236,7 @@ func (s *MessagingChannelServiceOp) GetMetadata(params *MessagingChannelMetadata
 
 	path := "/messaging/get_metadata"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metadata := map[string]string{}
@@ -254,7 +254,7 @@ func (s *MessagingChannelServiceOp) SetMetadata(params *MessagingChannelSetMetad
 
 	path := "/messaging/set_metadata"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metadata := map[string]string{}
@@ -272,7 +272,7 @@ func (s *MessagingChannelServiceOp) GetMetacounter(params *MessagingChannelMetac
 
 	path := "/messaging/get_metacounter"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -290,7 +290,7 @@ func (s *MessagingChannelServiceOp) SetMetacounter(params *MessagingChannelSetMe
 
 	path := "/messaging/set_metacounter"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -308,7 +308,7 @@ func (s *MessagingChannelServiceOp) IncreaseMetacounter(params *MessagingChannel
 
 	path := "/messaging/incr_metacounter"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -326,7 +326,7 @@ func (s *MessagingChannelServiceOp) DecreaseMetacounter(params *MessagingChannel
 
 	path := "/messaging/decr_metacounter"
 
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -345,7 +345,7 @@ func (s *MessagingChannelServiceOp) MessageCount(channelUrl string) (*MessageCou
 	path := "/messaging/message_count"
 
 	params := MessagingChannelUpdateRequest{ChannelUrl: channelUrl}
-	params.populateAuthApiToken(s.client)
+	params.PopulateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	count := new(MessageCount)
