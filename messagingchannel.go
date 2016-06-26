@@ -104,11 +104,11 @@ type MessagingChannelServiceOp struct {
 
 var _ MessagingChannelService = &MessagingChannelServiceOp{}
 
-// Create a group messaging channel using given name
+// Create creates a group messaging channel using given name
 func (s *MessagingChannelServiceOp) Create(params *MessagingChannelRequest) (*MessagingChannel, *Response, error) {
 
 	path := "/messaging/create"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	messagingChannel := new(MessagingChannelResponse)
@@ -121,11 +121,11 @@ func (s *MessagingChannelServiceOp) Create(params *MessagingChannelRequest) (*Me
 	return &messagingChannel.Channel, resp, nil
 }
 
-// Update a group messaging channel using given channel_url
+// Update updates a group messaging channel using given channel_url
 func (s *MessagingChannelServiceOp) Update(params *MessagingChannelUpdateRequest) (*MessagingChannel, *Response, error) {
 
 	path := "/messaging/update"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	messagingChannel := new(MessagingChannelResponse)
@@ -138,13 +138,13 @@ func (s *MessagingChannelServiceOp) Update(params *MessagingChannelUpdateRequest
 	return &messagingChannel.Channel, resp, nil
 }
 
-// Delete a group messaging channel using given channel_url
+// Delete deletes a group messaging channel using given channel_url
 func (s *MessagingChannelServiceOp) Delete(channelUrl string) (*MessagingChannelUrl, *Response, error) {
 
 	path := "/messaging/delete"
 
 	params := MessagingChannelUpdateRequest{ChannelUrl: channelUrl}
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	deleted := new(MessagingChannelUrl)
@@ -157,12 +157,12 @@ func (s *MessagingChannelServiceOp) Delete(channelUrl string) (*MessagingChannel
 	return deleted, resp, nil
 }
 
-// Invite users to the channel
+// Invite invites users to the channel
 func (s *MessagingChannelServiceOp) Invite(params *MessagingChannelInviteRequest) (*MessagingChannelUrl, *Response, error) {
 
 	path := "/messaging/invite"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	messagingChannelUrl := new(MessagingChannelUrl)
@@ -175,12 +175,12 @@ func (s *MessagingChannelServiceOp) Invite(params *MessagingChannelInviteRequest
 	return messagingChannelUrl, resp, nil
 }
 
-// Hide a messaging channel from the user messaging channel list
+// Hide hides a messaging channel from the user messaging channel list
 func (s *MessagingChannelServiceOp) Hide(params *MessagingChannelHideRequest) (*MessagingChannelUrl, *Response, error) {
 
 	path := "/messaging/hide"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	messagingChannelUrl := new(MessagingChannelUrl)
@@ -193,12 +193,12 @@ func (s *MessagingChannelServiceOp) Hide(params *MessagingChannelHideRequest) (*
 	return messagingChannelUrl, resp, nil
 }
 
-// Leave a messaging channel
+// Leave leaves a messaging channel
 func (s *MessagingChannelServiceOp) Leave(params *MessagingChannelLeaveRequest) (*MessagingChannelUrl, *Response, error) {
 
 	path := "/messaging/leave"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	messagingChannelUrl := new(MessagingChannelUrl)
@@ -212,13 +212,13 @@ func (s *MessagingChannelServiceOp) Leave(params *MessagingChannelLeaveRequest) 
 
 }
 
-// View information of the channel
+// View views information of the channel
 func (s *MessagingChannelServiceOp) View(channelUrl string) (*MessagingChannelView, *Response, error) {
 
 	path := "/messaging/view"
 
 	params := MessagingChannelUpdateRequest{ChannelUrl: channelUrl}
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	view := new(MessagingChannelView)
@@ -231,12 +231,12 @@ func (s *MessagingChannelServiceOp) View(channelUrl string) (*MessagingChannelVi
 	return view, resp, nil
 }
 
-// Get values of metadata keys
+// GetMetadata gets values of metadata keys
 func (s *MessagingChannelServiceOp) GetMetadata(params *MessagingChannelMetadataRequest) (map[string]string, *Response, error) {
 
 	path := "/messaging/get_metadata"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metadata := map[string]string{}
@@ -249,12 +249,12 @@ func (s *MessagingChannelServiceOp) GetMetadata(params *MessagingChannelMetadata
 	return metadata, resp, nil
 }
 
-// Set values of metadata keys
+// SetMetadata sets values of metadata keys
 func (s *MessagingChannelServiceOp) SetMetadata(params *MessagingChannelSetMetadataRequest) (map[string]string, *Response, error) {
 
 	path := "/messaging/set_metadata"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metadata := map[string]string{}
@@ -267,12 +267,12 @@ func (s *MessagingChannelServiceOp) SetMetadata(params *MessagingChannelSetMetad
 	return metadata, resp, nil
 }
 
-// Get values of metacounter keys
+// GetMetacounter gets values of metacounter keys
 func (s *MessagingChannelServiceOp) GetMetacounter(params *MessagingChannelMetacounterRequest) (map[string]int, *Response, error) {
 
 	path := "/messaging/get_metacounter"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -285,12 +285,12 @@ func (s *MessagingChannelServiceOp) GetMetacounter(params *MessagingChannelMetac
 	return metacounter, resp, nil
 }
 
-// Set values of metacounter keys. All values should be integer
+// SetMetacounter sets values of metacounter keys. All values should be integer
 func (s *MessagingChannelServiceOp) SetMetacounter(params *MessagingChannelSetMetacounterRequest) (map[string]int, *Response, error) {
 
 	path := "/messaging/set_metacounter"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -303,12 +303,12 @@ func (s *MessagingChannelServiceOp) SetMetacounter(params *MessagingChannelSetMe
 	return metacounter, resp, nil
 }
 
-// Increase values of metacounter keys. All deltas should be integer
+// IncreaseMetacounter increases values of metacounter keys. All deltas should be integer
 func (s *MessagingChannelServiceOp) IncreaseMetacounter(params *MessagingChannelSetMetacounterRequest) (map[string]int, *Response, error) {
 
 	path := "/messaging/incr_metacounter"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -321,12 +321,12 @@ func (s *MessagingChannelServiceOp) IncreaseMetacounter(params *MessagingChannel
 	return metacounter, resp, nil
 }
 
-// Decrease values of metacounter keys. All deltas should be integer
+// DecreaseMetacounter decreases values of metacounter keys. All deltas should be integer
 func (s *MessagingChannelServiceOp) DecreaseMetacounter(params *MessagingChannelSetMetacounterRequest) (map[string]int, *Response, error) {
 
 	path := "/messaging/decr_metacounter"
 
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	metacounter := map[string]int{}
@@ -339,13 +339,13 @@ func (s *MessagingChannelServiceOp) DecreaseMetacounter(params *MessagingChannel
 	return metacounter, resp, nil
 }
 
-// Get message count of the channel
+// MessageCount gets message count of the channel
 func (s *MessagingChannelServiceOp) MessageCount(channelUrl string) (*MessageCount, *Response, error) {
 
 	path := "/messaging/message_count"
 
 	params := MessagingChannelUpdateRequest{ChannelUrl: channelUrl}
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, params)
 
 	count := new(MessageCount)

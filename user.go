@@ -45,11 +45,11 @@ type UserServiceOp struct {
 
 var _ UserService = &UserServiceOp{}
 
-// Create a new user account using id / nickname / profile image combination
+// Create creates a new user account using id / nickname / profile image combination
 func (s *UserServiceOp) Create(params *UserRequest) (*User, *Response, error) {
 
 	path := "/user/create"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	createdUser := new(User)
@@ -64,11 +64,11 @@ func (s *UserServiceOp) Create(params *UserRequest) (*User, *Response, error) {
 	return createdUser, resp, nil
 }
 
-// Update a user
+// Update updates a user
 func (s *UserServiceOp) Update(params *UserRequest) (*User, *Response, error) {
 
 	path := "/user/update"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	updatedUser := new(User)
@@ -81,11 +81,11 @@ func (s *UserServiceOp) Update(params *UserRequest) (*User, *Response, error) {
 	return updatedUser, resp, nil
 }
 
-// Retrieve a user's information
+// Auth retrieve a user's information
 func (s *UserServiceOp) Auth(params *UserRequest) (*User, *Response, error) {
 
 	path := "/user/auth"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	user := new(User)
@@ -98,11 +98,11 @@ func (s *UserServiceOp) Auth(params *UserRequest) (*User, *Response, error) {
 	return user, resp, nil
 }
 
-// Block a target user
+// Block blocks a target user
 func (s *UserServiceOp) Block(params *BlockRequest) (*Response, error) {
 
 	path := "/user/block"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	var i interface{}
@@ -115,11 +115,11 @@ func (s *UserServiceOp) Block(params *BlockRequest) (*Response, error) {
 	return resp, nil
 }
 
-// Unblock a target user.
+// Unblock unblocks a target user.
 func (s *UserServiceOp) UnBlock(params *BlockRequest) (*Response, error) {
 
 	path := "/user/unblock"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	var i interface{}
@@ -132,11 +132,11 @@ func (s *UserServiceOp) UnBlock(params *BlockRequest) (*Response, error) {
 	return resp, nil
 }
 
-// Deactivate a user.
+// Deactivate deactivates a user.
 func (s *UserServiceOp) Deactivate(params *DeactivateRequest) (*Response, error) {
 
 	path := "/user/deactivate"
-	params.PopulateAuthApiToken(s.client)
+	params.populateAuthApiToken(s.client)
 	req, err := s.client.NewRequest("POST", path, *params)
 
 	var i interface{}

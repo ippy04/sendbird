@@ -85,7 +85,7 @@ type ChannelMemberCount struct {
 	MemberCount            int `json:"member_count"`             // number of members in the channel
 }
 
-// Broadcast an admin message to the channels
+// BroadcastMessages broadcasts an admin message to the channels
 // Please note that this feature is not available on Free and Sprout plans.
 func (s *AdminServiceOp) BroadcastMessage(params *BroadcastMessageRequest) (*Response, error) {
 
@@ -103,7 +103,7 @@ func (s *AdminServiceOp) BroadcastMessage(params *BroadcastMessageRequest) (*Res
 	return resp, nil
 }
 
-// Read messages from the target channel
+// ReadMessages reads messages from the target channel
 // Either channel_url or target_user_ids must be set
 func (s *AdminServiceOp) ReadMessages(params *ReadMessagesRequest) ([]AdminMessage, *Response, error) {
 
@@ -121,7 +121,7 @@ func (s *AdminServiceOp) ReadMessages(params *ReadMessagesRequest) ([]AdminMessa
 	return messages, resp, nil
 }
 
-// Delete a message from your application
+// DeleteMessage deletes a message from your application
 func (s *AdminServiceOp) DeleteMessage(messageId string) (*DeleteMessage, *Response, error) {
 
 	path := "/admin/delete_message"
@@ -145,7 +145,7 @@ func (s *AdminServiceOp) DeleteMessage(messageId string) (*DeleteMessage, *Respo
 	return message, resp, nil
 }
 
-// List messaging channels of the target user
+// listMessagingChannels lists messaging channels of the target user
 func (s *AdminServiceOp) ListMessagingChannels(userId string) ([]AdminMessagingChannel, *Response, error) {
 
 	path := "/admin/list_messaging_channels"
@@ -169,7 +169,7 @@ func (s *AdminServiceOp) ListMessagingChannels(userId string) ([]AdminMessagingC
 	return channels, resp, nil
 }
 
-// Mute a user in all channels in your application. Prohibit a user from sending messages at all.
+// MuteAllChannels mutes a user in all channels in your application. Prohibit a user from sending messages at all.
 func (s *AdminServiceOp) MuteAllChannels(userId string) (*Response, error) {
 
 	path := "/admin/mute"
@@ -193,7 +193,7 @@ func (s *AdminServiceOp) MuteAllChannels(userId string) (*Response, error) {
 	return resp, nil
 }
 
-// Mute a user in some channels in your application
+// Mute mutes a user in some channels in your application
 func (s *AdminServiceOp) Mute(params *MuteRequest) ([]string, *Response, error) {
 
 	path := "/admin/mute"
@@ -210,7 +210,7 @@ func (s *AdminServiceOp) Mute(params *MuteRequest) ([]string, *Response, error) 
 	return channels, resp, nil
 }
 
-// Unmute a user to start sending messages in your application. This doesn't unmute channel-wide mute
+// UnMuteAllChannels unmutes a user to start sending messages in your application. This doesn't unmute channel-wide mute
 func (s *AdminServiceOp) UnMuteAllChannels(userId string) (*Response, error) {
 
 	path := "/admin/unmute"
@@ -234,7 +234,7 @@ func (s *AdminServiceOp) UnMuteAllChannels(userId string) (*Response, error) {
 	return resp, nil
 }
 
-// Mute a user in some channels in your application
+// UnMute unmutes a user in some channels in your application
 func (s *AdminServiceOp) UnMute(params *UnMuteRequest) ([]string, *Response, error) {
 
 	path := "/admin/unmute"
@@ -251,7 +251,7 @@ func (s *AdminServiceOp) UnMute(params *UnMuteRequest) ([]string, *Response, err
 	return channels, resp, nil
 }
 
-// Get the list of muted user ids in application-wide mute
+// MuteList gets the list of muted user ids in application-wide mute
 func (s *AdminServiceOp) MuteList(channelUrls []string) ([]string, *Response, error) {
 
 	path := "/admin/mute_list"
@@ -275,7 +275,7 @@ func (s *AdminServiceOp) MuteList(channelUrls []string) ([]string, *Response, er
 	return userIds, resp, nil
 }
 
-// Get the list of muted user ids in application-wide mute
+// ConcurrentUserCount gets the list of muted user ids in application-wide mute
 func (s *AdminServiceOp) ConcurrentUserCount() (*ConcurrentUserCount, *Response, error) {
 
 	path := "/admin/ccu_count"
@@ -294,7 +294,7 @@ func (s *AdminServiceOp) ConcurrentUserCount() (*ConcurrentUserCount, *Response,
 	return count, resp, nil
 }
 
-// Get the list of muted user ids in application-wide mute
+// MemberCountInChannel gets the list of muted user ids in application-wide mute
 func (s *AdminServiceOp) MemberCountInChannel(channelUrl string) (*ChannelMemberCount, *Response, error) {
 
 	path := "/admin/member_count"
